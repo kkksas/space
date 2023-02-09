@@ -41,3 +41,19 @@ void Enemy::move_down(){
     }
     y+=BASE_SIZE;
 }
+Bullet* Enemy::shoot(Image &image){
+    Bullet* tmp_bullet = new Bullet(image,x,y,BASE_SIZE,BASE_SIZE,window,ENEMY_BULLET_SPEED);
+    return tmp_bullet;
+}
+IntRect Enemy::get_hitbox()
+{
+    return IntRect(x + 0.25f * BASE_SIZE, y + 0.25f * BASE_SIZE, 0.5f * BASE_SIZE, 0.5f * BASE_SIZE);
+}
+bool Enemy::check_collisions(IntRect player_bullet){
+    if (get_hitbox().intersects(player_bullet)){
+        return true;
+    }else{
+        return false;
+    }
+
+}

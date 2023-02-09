@@ -11,6 +11,8 @@ public:
     bool move(int dir);
     void update(float time);
     void move_down();
-
+    Bullet* shoot(Image &image);
+    IntRect get_hitbox();
+    bool check_collisions(IntRect player_bullet);
 };
 #endif // ENEMY
