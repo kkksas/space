@@ -20,6 +20,7 @@ class Enemies{
     uniform_int_distribution<unsigned short> shoot_distribution;
     list<Bullet*> enemy_bullets;
     list<Bullet*>::iterator bullet_iter;
+
 public:
     ~Enemies();
     Enemies(RenderWindow* i_window);
